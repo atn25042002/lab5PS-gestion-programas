@@ -1,0 +1,35 @@
+server:
+  port: 9096
+
+springdoc:
+  api-docs:
+    version: openapi_3_0
+    path: /auth/swagger-ui-doc
+  swagger-ui:
+    path: /auth/swagger-ui.html
+    use-root-path: false
+
+spring:
+  webflux:
+    base-path: /ms-ne-e-learning-gestion-programas/v1
+  application:
+    name: ms-ne-e-learning-gestion-programas
+  main:
+    allow-bean-definition-overriding: true
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/sistema-e-learning
+    username: admin
+    password: admin
+    pool:
+      initial-size: 100
+      max-size: 500
+      max-idle-time: 30m
+      validation-query: SELECT 1
+
+info:
+  project:
+    version: 1.0.0
+    title: API-NE-E-Learning-Gestion-Programas
+    group: seguridad
+    description: Gestiona la informacion de las programas
+    controller: pe.devstream.controller
